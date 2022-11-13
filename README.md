@@ -3,4 +3,4 @@ Vue + WebSocket + SpringBoot + MongoDB + Mysql + Github图床 + BootStrap完成�
 ---
 见master分支
 大致界面如下
-![](https://cdn.jsdelivr.net/gh/Mazai-Liu/pictures@main/img/gayhub/QQ图片20221113204100.png)
+![](https://cdn.jsdelivr.net/gh/Mazai-Liu/pictures@main/img/gayhub/QQ图片20221113205013.png)
