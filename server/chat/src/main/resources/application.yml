@@ -1,7 +1,7 @@
 spring:
   datasource:
-    username: 'root'
-    password: '0322'
+    username: ''
+    password: ''
     url: jdbc:mysql://localhost:3306/lec-chat?serverTimezone=UTC&useSSL=true
   data:
     mongodb:
@@ -13,11 +13,11 @@ mybatis:
 github:
   bucket:
     # 配置仓库所属的用户名（如果是自己创建的，就是自己的用户名）
-    user: "Mazai-Liu"
+    user: ""
     # 配置仓库名称
-    repository: "pictures"
+    repository: ""
     # 配置自己的acccessToken
-    access-token: "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"
+    access-token: ""
 #    url: "https://cdn.jsdelivr.net/gh/${github.bucket.user}/${github.bucket.repository}/@main/"
-    url: "https://cdn.jsdelivr.net/gh/${github.bucket.user}/${github.bucket.repository}/"
-    api: "https://api.github.com/repos/${github.bucket.user}/${github.bucket.repository}/contents/"
+    url: ""
+    api: ""
