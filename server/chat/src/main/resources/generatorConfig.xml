@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!-- 驱动配置，一般去maven仓库中找-->
+    <classPathEntry location="D:\mysql-connector-java-8\mysql-connector-java-8.0.20.jar"/>
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+
+        <!--不生成注释-->
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!--数据源配置，直接去复制数据源的配置即可-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/lec-chat?serverTimezone=UTC"
+                        userId="root"
+                        password="0322">
+        </jdbcConnection>
+
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+
+        <!--model（实体）层接口映射 targetPackage：映射到项目中的具体位置；
+                targetProject：是放到src/main/java下，还是放到src/main/resources下，通常选择是src/main/java-->
+        <javaModelGenerator targetPackage="lec.projects.chat.entity" targetProject="src/main/java"/>
+
+        <!--XML层映射 targetPackage：映射到项目中的具体位置；
+                targetProject：是放到src/main/java下，还是放到src/main/resources下，通常选择是src/main/resources-->
+        <sqlMapGenerator targetPackage="mapper"  targetProject="src/main/resources"/>
+
+        <!--mapper层接口映射 targetPackage：映射到项目中的具体位置；
+        targetProject：是放到src/main/java下，还是放到src/main/resources下，通常选择是src/main/java-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="lec.projects.chat.mapper"  targetProject="src/main/java"/>
+
+        <!--tableName:数据库中的需要逆向工程的表名；domainObjectName:表生成对应的实体类名称
+        enableDeleteByExample：这几个**ByExample表示不生成例子
+        需要生成多张表，可以复制下面配置，然后修改表明和实体名即可
+        -->
+        <table  tableName="tb_user" domainObjectName="User" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" enableInsert="false" enableCountByExample="false"/>
+    </context>
+</generatorConfiguration>

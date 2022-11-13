@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    username: 'root'
+    password: '0322'
+    url: jdbc:mysql://localhost:3306/lec-chat?serverTimezone=UTC&useSSL=true
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/chatRecord
+server:
+  port: 8070
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+github:
+  bucket:
+    # 配置仓库所属的用户名（如果是自己创建的，就是自己的用户名）
+    user: "Mazai-Liu"
+    # 配置仓库名称
+    repository: "pictures"
+    # 配置自己的acccessToken
+    access-token: "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"
+#    url: "https://cdn.jsdelivr.net/gh/${github.bucket.user}/${github.bucket.repository}/@main/"
+    url: "https://cdn.jsdelivr.net/gh/${github.bucket.user}/${github.bucket.repository}/"
+    api: "https://api.github.com/repos/${github.bucket.user}/${github.bucket.repository}/contents/"
